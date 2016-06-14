@@ -1,0 +1,51 @@
+#footer {
+    height: 2em;
+    position: relative;
+    z-index: 1;
+    text-align: center;
+}
+
+.container {
+    height: auto;
+    min-height: 90%;
+}
+
+html, body {
+    height: 98%;
+    margin: 0;
+    padding: 0;
+}
+
+.blank_line {
+    margin: 12px;
+}
+
+.bordered {
+    border:solid 2px green;
+    padding:2px;
+}
+
+.icon_btc {
+    width:20px;
+    height:20px;
+}
+
+.main_stats {
+    width:100px;
+    height:100px;
+    padding:10px;
+}
+
+.org_name {
+    padding:10px;
+    font-weight:bold;
+    font-size:14pt;
+}
+
+.org_description {
+    padding: 10px;
+}
+
+.actions {
+    padding-top: 10px;
+}
