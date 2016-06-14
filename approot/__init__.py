@@ -1,0 +1,23 @@
+from flask import Flask
+from flask.ext.sqlalchemy import SQLAlchemy
+
+db = SQLAlchemy()
+
+from .views import (
+    bp_core,)
+
+def create_app(config):
+    print('*** Creating app with environment: {}'.format(config))
+    app = Flask(__name__)
+    config_objs = {'development': 'approot.config.DevConfig',
+                   'production': 'approot.config.ProdConfig',
+                   'test': 'approot.config.TestConfig'}
+    app.config.from_object(config_objs[config])
+
+    # Blueprints
+    app.register_blueprint(bp_core)
+
+    # Database
+    db.init_app(app)
+
+    return app

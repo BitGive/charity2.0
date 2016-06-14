@@ -1,0 +1,30 @@
+"""
+Template for config file.
+Create config.py inside approot directory based on this.
+"""
+
+class BaseConfig(object):
+    SECRET_KEY = 'development key'
+    DEBUG = False
+    TESTING = False
+
+    SQLALCHEMY_ECHO = False
+    SQLALCHEMY_DATABASE_URI = 'sqlite:////tmp/dummy.db'
+
+
+class DevConfig(BaseConfig):
+    DEBUG = True
+    SQLALCHEMY_ECHO = True
+
+    # If you want to use sqlite, do nothing. Else, config URI for your local database.
+    # SQLALCHEMY_DATABASE_URI = 'dialect+driver://username:password@host:port/database'
+
+
+class ProdConfig(BaseConfig):
+    SECRET_KEY = 'Replace with a secure key'
+    pass
+
+
+class TestConfig(BaseConfig):
+    TESTING = True
+    SQLALCHEMY_ECHO = True

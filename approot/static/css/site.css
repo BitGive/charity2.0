@@ -1,0 +1,36 @@
+.new_task_box {
+    width: 100%;
+}
+
+#btn_new_word {
+    height: 25px;
+    margin: 6px;
+    margin-bottom: 9px;
+}
+
+#btn_new_batch {
+    margin-left: 10px;
+    margin-bottom: 28px;
+}
+
+#footer {
+    height: 2em;
+    position: relative;
+    z-index: 1;
+    text-align: center;
+}
+
+.container {
+    height: auto;
+    min-height: 90%;
+}
+
+html, body {
+    height: 98%;
+    margin: 0;
+    padding: 0;
+}
+
+.blank_line {
+    margin: 12px;
+}

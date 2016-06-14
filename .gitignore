@@ -1,0 +1,8 @@
+*~
+*.pyc
+*.log
+.coverage
+/codereport
+/env
+/logs
+/approot/config.py

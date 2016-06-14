@@ -1,0 +1,12 @@
+Charity 2.0
+==============
+
+Quick start - set up development environment
+- use pip to install dependencies in requirements.txt
+- $ cp approot/config.py.template approot/config.py
+- Modify approot/config.py as neccessary
+
+
+Run local server
+- $ bin/manage.py runserver
+  Optional argument: --config or -c [development|production|test]
