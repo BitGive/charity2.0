@@ -1,0 +1,107 @@
+
+<html>
+	<head>
+		<!-- This progress bar is from here: https://github.com/mickaelr/jquery-stepProgressBar -->
+		<link href="static/css/jquery.StepProgressBar.css" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<link href="https://www.google.com/fonts#UsePlace:use/Collection:PT+Sans:400,700" rel='stylesheet'>
+		<style>
+			h2, span {
+				font-family: 'PT Sans';
+			}
+			h2 {
+				font-size: 20px;
+				color: #555;
+			}
+			#progressbar {
+				margin-top: 30px;
+			}
+			.project {
+				margin-top: 30px;
+				margin-bottom: 40px;
+			}
+			.projects {
+				padding-top: 60px;
+				margin-left: 10%;
+				width: 80%;
+			}
+			hr {
+				display: block;
+				height: 1px;
+				border: 0;
+				border-top: 1px solid #ccc;
+				margin: 1em 0;
+				padding: 0;
+			}
+		</style>
+	</head>
+	<body>
+
+		<div class="projects">
+			<div class="project">
+				<h2>The Water Project: Rebuild Dam in Mombasa</h2>
+				<div id="progressbar-1" class="progressbar" data-value="60"></div>
+			</div>
+			<hr />
+			<div class="project">
+				<h2>Save the Children: Food for Blood Donors</h2>
+				<div id="progressbar-2" class="progressbar" data-value="80"></div>
+			</div>
+			<hr />
+			<div class="project">
+				<h2>The Water Project: Bridge Water Project</h2>
+				<div id="progressbar-3" class="progressbar" data-value="20"></div>
+			</div>
+		</div>
+
+		<script src="static/scripts/jquery-3.0.0.js"></script>
+		<script src="static/scripts/jquery.stepProgressBar.js"></script>
+		<script>
+			$(document).ready(function() {
+				$('.progressbar').each(function() {
+					$(this).stepProgressBar({
+						currentValue: 0,
+						steps: [
+							{
+								topLabel: 'Donation Made',
+								value: 0,
+								bottomLabel: '<i class="material-icons">credit_card</i>'
+							},
+							{
+								topLabel: 'Received by Nonprofit',
+								value: 20,
+								bottomLabel: '<i class="material-icons">card_giftcard</i>'
+							},
+							{
+								topLabel: 'Project Fully Funded',
+								value: 40,
+								bottomLabel: '<i class="material-icons">account_balance</i>'
+							},
+							{
+								topLabel: 'Received by Local',
+								value: 60,
+								bottomLabel: '<i class="material-icons">flight_land</i>'
+							},
+							{
+								topLabel: 'Project Started',
+								value: 80,
+								bottomLabel: '<i class="material-icons">cached</i>'
+							},
+							{
+								topLabel: 'Completed',
+								value: 100,
+								bottomLabel: '<i class="material-icons">done</i>'
+							},
+						]
+					});
+
+					// Set the data-value as the value of the progress bar
+					// This is just to make set up easier for this test
+					var value = $(this).data('value');
+					$(this).stepProgressBar('setCurrentValue', value);
+				});
+			});
+		</script>
+
+	</body>
+</html>
